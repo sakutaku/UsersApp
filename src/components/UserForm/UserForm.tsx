@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
-import {IUserMutation} from "../../types";
+import {IUser, IUserMutation} from "../../types";
+import {nanoid} from "nanoid";
 
-
-const UserForm = () => {
+interface Props {
+    onSubmit: (newUser: IUser) => void;
+}
+const UserForm: React.FC<Props> = ({onSubmit}) => {
     const [user, setUser] = useState<IUserMutation>({
         name: '',
         email: '',
@@ -21,6 +24,11 @@ const UserForm = () => {
 
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        onSubmit({
+            id: nanoid(),
+            ...user,
+        });
 
         console.log(user);
     };
