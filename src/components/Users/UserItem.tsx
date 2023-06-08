@@ -14,9 +14,9 @@ const UserItem: React.FC<Props> = ({user}) => {
     }
 
     return (
-        <div className="card">
+        <div className="card mb-3">
             <div className="card-body">
-                <h5 className="card-title">{user.name}</h5>
+                <h5 className="card-title text-uppercase">{user.name}</h5>
                 <p className="card-text">{user.email}</p>
                 <blockquote className="blockquote mb-0">
                     <p>Status: {status}</p>

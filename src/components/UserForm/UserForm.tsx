@@ -29,13 +29,11 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
             id: nanoid(),
             ...user,
         });
-
-        console.log(user);
     };
 
     return (
-        <form className="form-control w-50" onSubmit={onFormSubmit}>
-            <h4>Add info:</h4>
+        <form className="form-control w-50 mx-auto" onSubmit={onFormSubmit}>
+            <h4 className="text-center">Add info</h4>
             <div className="form-group mb-3">
                 <label htmlFor="name">Name</label>
                 <input
@@ -60,7 +58,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
             </div>
 
             <div className="form-group mb-3">
-                <label htmlFor="isCompleted">Status</label>
+                <label htmlFor="isCompleted" className="me-2">Status</label>
                 <input
                     type="checkbox"
                     name="isCompleted"
@@ -84,7 +82,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
                 </select>
             </div>
 
-            <div className="form-group">
+            <div className="form-group text-center">
                 <button type="submit" className="btn btn-danger">Submit</button>
             </div>
         </form>
